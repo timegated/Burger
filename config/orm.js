@@ -1,16 +1,19 @@
 const connection = require("../config/connection")
-//Methods to for CRUD
+// Methods to for CRUD
 
 const orm = {
-    selectAll: function() {
-
+    selectAll: function(table, callBack) {
+        connection.query("SELECT * FROM ??",[table], (err, data) => {
+            if(err) throw err
+            callBack(data)
+        })
     },
-    insertOne: function() {
+    // insertOne: function() {
 
-    },
-    updateOne: function() {
+    // },
+    // updateOne: function() {
 
-    }
+    // }
 }
 
 module.exports = orm;

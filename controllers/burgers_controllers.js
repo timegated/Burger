@@ -5,8 +5,12 @@ const burger = require("../models/burger")
 const router = express.Router()
 
 router.get("/", (req, res) => {
-    // console.log(res)
-    res.render("index")
+    burger.all((data)=>{
+        let hbsObject = {
+            burgers:data
+        }
+        res.render("index", hbsObject)
+    })
 })
 
 module.exports = router;

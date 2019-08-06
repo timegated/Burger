@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Burgers</title>
-</head>
-
- </head>
-<body>
-  <div class="valign-wrapper">
+<div class="valign-wrapper">
+    <div class="container">
+      <table>
+        {{#each burgers}}
+        {{> burgers/burger-block}}
+        {{/each}}
+      </table>
+    </div>
     <div class="container center-align m10">
       <div class="row">
       <form class="col s12">
@@ -25,7 +21,7 @@
     <div class="container">
       <button data-target="modal1" class="btn modal-trigger black">Devoured</button>
      </div>
-
+  </div>
   
           
 
@@ -34,6 +30,3 @@
   
 
   
-
-</body>
-</html>
