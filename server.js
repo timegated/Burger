@@ -1,12 +1,19 @@
-const express = require("express")
-const app = express()
-const exphbs = require("express-handlebars")
-const routes = require("./controllers/burgers_controllers")
-const PORT = process.env.PORT || 3000
-app.engine("handlebars", exphbs({defaultLayout:"main"}))
-app.set("view", "handlebars")
+const express = require("express");
+const app = express();
 
-app.use(routes)
+const routes = require("./controllers/burgers_controllers.js");
+
+const exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+
+app.set("view engine", "handlebars");
+
+const PORT = process.env.PORT || 3000;
+
+app.use(express.static("public"));
+
+app.use(routes);
 
 app.listen(PORT, () => {
     console.log(`Server works listening on ${PORT}`)
