@@ -15,9 +15,9 @@ const burger = {
             callBack(res)
         })
     },
-    update: function(devourId, callBack) {
-        console.log(devourId)
-        orm.updateOne("burgers", "devoured", true, "id", devourId, (res) => {
+    update: function(id, callBack) {
+        console.log(id)
+        orm.updateOne("burgers", "devoured", true, "id", id, (res) => {
             // callBack(res)
             console.log(res)
         })

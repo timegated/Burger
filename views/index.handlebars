@@ -1,25 +1,33 @@
-<div class="valign-wrapper">
-    <div class="container">
-      <table>
+<div class="row">
+    <div class="col s6">
+      <div class="card-panel white">
+          <h4 class="blue-text">Uneaten Burgers</h4>
+        </div>
+     <ul class="collection">
         {{#each burgers}}
         {{#unless devoured}}
         {{> burgers/burger-block devoured=false}}
         {{/unless}}
         {{/each}}
-      </table>
-      <div class="container">
-        <table>
-          {{#each burgers}}
-          {{#if devoured}}
-          {{> burgers/burger-block devoured=true}}
-          {{/if}}
-          {{/each}}
-        </table>
+     </ul>
+    </div>
+     
+      <div class="col s6">
+        <div class="card-panel white">
+          <h4 class="blue-text">Eaten Burgers</h4>
+        </div>
+        <ul class="collection">
+        {{#each burgers}}
+        {{#if devoured}}
+        {{> burgers/burger-block devoured=true}}
+        {{/if}}
+        {{/each}}
+        </ul>
       </div>
    
     
       <div class="row">
-        <form class="create-form col s6">
+        <form class="create-form col s12">
           <div class="row">
             <div class="input-field col s12">
               <textarea id="create-burger" name="burger-name" class="materialize-textarea"></textarea>

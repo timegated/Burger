@@ -1,4 +1,8 @@
-<tr class="table-row">
-    <td class="table-first-col">{{burger_name}}</td>
-    <td><button class="change-devour btn black" data-id={{id}}>Devour</button></td>
-</tr>
+<li class="white collection-item">
+    {{burger_name}} {{#unless devoured}}
+    <div class="devour">
+    <button class="btn black eat" data-id="{{id}}">Devour</button>
+    </div>
+    
+    {{/unless}}
+</li>

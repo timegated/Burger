@@ -14,20 +14,20 @@ $(document).ready(function(){
       type:"POST",
       data: newBurger
     }).then((response)=>{
-      console.log(response)
+      
       $(".create-form").val("")
       location.reload()
     })
   })
 
-  $('.change-devour').on('click', () => {
+  $('.eat').on('click', function(event) {
+    event.preventDefault
     let id = $(this).data("id");
     console.log(id)
     $.ajax("/api/burgers/" + id, {
       type:"PUT",
 
     }).then((response) => {
-      console.log(response)
       location.reload()
     }
     )
