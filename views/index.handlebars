@@ -2,26 +2,36 @@
     <div class="container">
       <table>
         {{#each burgers}}
-        {{> burgers/burger-block}}
+        {{#unless devoured}}
+        {{> burgers/burger-block devoured=false}}
+        {{/unless}}
         {{/each}}
       </table>
-    </div>
-    <div class="container center-align m10">
+      <div class="container">
+        <table>
+          {{#each burgers}}
+          {{#if devoured}}
+          {{> burgers/burger-block devoured=true}}
+          {{/if}}
+          {{/each}}
+        </table>
+      </div>
+   
+    
       <div class="row">
-      <form class="col s12">
-        <div class="row">
-          <div class="input-field col s6">
-            <textarea id="textarea1" class="materialize-textarea"></textarea>
-            <label for="textarea1" class="black-text">Burgers</label>
+        <form class="create-form col s6">
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea id="create-burger" name="burger-name" class="materialize-textarea"></textarea>
+              <label for="textarea1" name="burger-name">Create Burger</label>
+            </div>
           </div>
-        </div>
-      </form>
+          <button type="submit" class="btn waves-effect black">Add Burger</button>
+        </form>
+      </div>
+     </div><!--End container-->
   </div>
-    </div>
-    <div class="container">
-      <button data-target="modal1" class="btn modal-trigger black">Devoured</button>
-     </div>
-  </div>
+    
   
           
 
