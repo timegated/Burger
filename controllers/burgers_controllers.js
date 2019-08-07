@@ -9,6 +9,7 @@ router.get("/", (req, res) => {
         let hbsObject = {
             burgers:data
         }
+        console.log(hbsObject)
         res.render("index", hbsObject)
     })
 })
@@ -20,6 +21,14 @@ router.get("/", (req, res) => {
 router.post('/api/burgers', (req,res) => {
     burger.create(req.body.burger_name, () => {
         res.json({id: res.insertId})
+    })
+})
+
+router.put('/api/burgers/:id', (req, res) => {
+    console.log(req.params.id)
+    burger.update(req.params.id, (res) => {
+
+        res.json(res)
     })
 })
 

@@ -15,13 +15,22 @@ $(document).ready(function(){
       data: newBurger
     }).then((response)=>{
       console.log(response)
-      $("#create-burger").val("")
+      $(".create-form").val("")
       location.reload()
     })
   })
 
   $('.change-devour').on('click', () => {
-    console.log("button responds to clicks")
+    let id = $(this).data("id");
+    console.log(id)
+    $.ajax("/api/burgers/" + id, {
+      type:"PUT",
+
+    }).then((response) => {
+      console.log(response)
+      location.reload()
+    }
+    )
   })
   });
  
