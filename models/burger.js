@@ -21,12 +21,7 @@ const burger = {
             callBack(res)
         })
     },
-    delete: function(id, callBack) {
-        console.log(id)
-        orm.deleteOne("burgers", "id", id, (res) => {
-            console.log(res)
-        })
-    }
+    
   
 }
 

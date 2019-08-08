@@ -9,35 +9,36 @@ router.get("/", (req, res) => {
         let hbsObject = {
             burgers:data
         }
-        console.log(hbsObject)
+        // console.log(hbsObject)
         res.render("index", hbsObject)
     })
 })
 
-// router.get('/api/burgers', (req, res) => {
-//     res.send(req.body.burger_name)
-// })
+router.get('/api/burgers', (req, res) => {
+    burger.all((data) => {
+        let hbsObject ={
+            burgers:data
+        }
+        res.json(hbsObject)
+    })
+    
+})
 
 router.post('/api/burgers', (req,res) => {
     burger.create(req.body.burger_name, () => {
+        console.log(req.body)
         res.json({id: res.insertId})
     })
 })
 
 router.put('/api/burgers/:id', (req, res) => {
     console.log(req.params.id)
-    burger.update(req.params.id, (res) => {
-
-        
+    burger.update(req.params.id, () => {
+       
     })
 })
 
-router.delete('/api/burgers/:id', (req, res) => {
-    console.log(req.params.id)
-    burger.delete(req.params.id, (res) => {
-        console.log(res)
-    })
-})
+
 
 
 module.exports = router;

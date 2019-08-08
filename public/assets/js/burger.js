@@ -33,23 +33,12 @@ $(document).ready(function(){
     
     
     })
-  setTimeout(() => {
     location.reload()
-  }, 500);
-   
   })
  
 //Removing the burger from the db entirely
 
-$('.delete').on('click', function() {
-  let id = $(this).data("id")
-  console.log(id)
-  $.ajax("/api/burgers/" + id, {
-    type:"DELETE"
-  }).then((response) => {
-    console.log(response)
-  })
-})
+
   
   });
  
