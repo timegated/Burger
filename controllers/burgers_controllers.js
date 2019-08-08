@@ -9,9 +9,20 @@ router.get("/", (req, res) => {
         let hbsObject = {
             burgers:data
         }
-      
+        
         res.render("index", hbsObject)
         
+    })
+  
+})
+
+router.get('/api/burgers', (req, res) => {
+    burger.all((data)=>{
+        let hbsObject = {
+            burgers:data
+        }
+        
+        res.json(hbsObject)
     })
 })
 
@@ -26,8 +37,7 @@ router.post('/api/burgers', (req,res) => {
 router.put('/api/burgers/:id', (req, res) => {
     
     burger.update(req.params.id, () => {
-        console.log(res)
-        console.log(req.body)
+        
         res.json({id: res.insertId})
        
     })

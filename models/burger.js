@@ -6,7 +6,7 @@ const burger = {
     all: function(callBack) {
         orm.selectAll("burgers", (res) =>{
             callBack(res)
-            // console.log(res)
+            
         })
     },
     create: function(value, callBack) {
