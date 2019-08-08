@@ -1,8 +1,11 @@
-<li class="white collection-item">
+<li class="white collection-item z-depth-3">
     {{burger_name}} {{#unless devoured}}
     <div class="devour">
-    <button class="btn black eat" data-id="{{id}}">Devour</button>
+    <a class="btn-floating waves-effect black eat" data-id="{{id}}"><i class="material-icons">mood</i></a>
     </div>
     
     {{/unless}}
+    <div class="devoured" style="margin-top: 4px;">
+        <a class="btn-floating black delete" data-id="{{id}}"><i class="material-icons">do_not_disturb</i></a>
+    </div>
 </li>

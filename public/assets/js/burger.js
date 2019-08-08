@@ -1,8 +1,6 @@
 $(document).ready(function(){
-  $('.change-devour').on("click", () => {
-
-  })
-
+  
+//Adding a new burger to the list
   $('.create-form').on('submit', (event) => {
     event.preventDefault()
 
@@ -14,23 +12,44 @@ $(document).ready(function(){
       type:"POST",
       data: newBurger
     }).then((response)=>{
-      
       $(".create-form").val("")
+
       location.reload()
     })
+    
   })
-
+//Changing the devour boolean to true (eating the burger)
   $('.eat').on('click', function(event) {
     event.preventDefault
+      $('.modal').modal()
     let id = $(this).data("id");
-    console.log(id)
+ 
     $.ajax("/api/burgers/" + id, {
-      type:"PUT",
+      type:"PUT"
 
     }).then((response) => {
-      location.reload()
-    }
-    )
+    
+      console.log(response)
+    
+    
+    })
+  setTimeout(() => {
+    location.reload()
+  }, 500);
+   
   })
+ 
+//Removing the burger from the db entirely
+
+$('.delete').on('click', function() {
+  let id = $(this).data("id")
+  console.log(id)
+  $.ajax("/api/burgers/" + id, {
+    type:"DELETE"
+  }).then((response) => {
+    console.log(response)
+  })
+})
+  
   });
  

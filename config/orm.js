@@ -10,7 +10,7 @@ const orm = {
             callBack(data)
         })
     },
-   insertOne: function(table, columnName, value, callBack) {
+    insertOne: function(table, columnName, value, callBack) {
       value = connection.escape(value)
        connection.query("INSERT INTO ?? (??) VALUES (?)", [table, columnName, value] , (err, data) => {
            if(err) throw err
@@ -21,6 +21,12 @@ const orm = {
    },
    updateOne: function(table, columnName, value, columnId, id, callBack){
        connection.query("UPDATE ?? SET ?? = ? WHERE ?? = ?", [table, columnName, value, columnId, id], (err, data) => {
+           if(err) throw err
+           callBack(data)
+       })
+   },
+   deleteOne: function (table, columnName, id, callBack) {
+       connection.query("DELETE FROM ?? WHERE ?? = ?", [table, columnName, id], (err, data) => {
            if(err) throw err
            console.log(data)
        })

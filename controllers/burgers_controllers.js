@@ -28,7 +28,14 @@ router.put('/api/burgers/:id', (req, res) => {
     console.log(req.params.id)
     burger.update(req.params.id, (res) => {
 
-        res.json(res)
+        
+    })
+})
+
+router.delete('/api/burgers/:id', (req, res) => {
+    console.log(req.params.id)
+    burger.delete(req.params.id, (res) => {
+        console.log(res)
     })
 })
 

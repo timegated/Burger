@@ -18,7 +18,12 @@ const burger = {
     update: function(id, callBack) {
         console.log(id)
         orm.updateOne("burgers", "devoured", true, "id", id, (res) => {
-            // callBack(res)
+            callBack(res)
+        })
+    },
+    delete: function(id, callBack) {
+        console.log(id)
+        orm.deleteOne("burgers", "id", id, (res) => {
             console.log(res)
         })
     }
