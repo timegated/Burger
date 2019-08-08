@@ -11,32 +11,42 @@ $(document).ready(function(){
     $.ajax("/api/burgers", {
       type:"POST",
       data: newBurger
-    }).then((response)=>{
+    }).then(()=>{
       $(".create-form").val("")
-
       location.reload()
     })
     
   })
 //Changing the devour boolean to true (eating the burger)
   $('.eat').on('click', function(event) {
-    event.preventDefault
-      $('.modal').modal()
+    event.preventDefault()
+      
     let id = $(this).data("id");
  
     $.ajax("/api/burgers/" + id, {
       type:"PUT"
 
-    }).then((response) => {
-    
-      console.log(response)
-    
+    }).then(function() {
+    location.reload()
     
     })
+   
+  })
+
+ 
+//Change the boolean value of devour back to false.
+
+$('.uneat').on('click', function (event) {
+  event.preventDefault()
+  let id = $(this).data("id")
+  console.log(id)
+  $.ajax("/api/burgers/" + id, {
+    type:"PUT"
+  }).then(function(){
     location.reload()
   })
- 
-//Removing the burger from the db entirely
+  
+});
 
 
   

@@ -1,0 +1,21 @@
+.background-card {
+    background-image: url("https://as1.ftcdn.net/jpg/01/89/53/20/500_F_189532064_V1UgjGcqTjXX6qBdTUom041gDLpJIUOe.jpg");
+    background-size: contain;
+    background-position: 250px;
+    background-repeat:repeat-x;
+    width: 60%;
+    margin: auto;
+    
+}
+
+.card-content h2 {
+    background: black;
+    width: 25%;
+    animation: fadeIn 3s;
+}
+
+@-webkit-keyframes fadeIn {
+    from{opacity: 0;}
+    
+}
+

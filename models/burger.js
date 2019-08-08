@@ -21,7 +21,7 @@ const burger = {
             callBack(res)
         })
     },
-    
+   
   
 }
 

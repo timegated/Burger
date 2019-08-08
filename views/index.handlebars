@@ -1,10 +1,16 @@
 <div class="row">
-  <div class="card-panel"></div>
+  <div class="card-panel background-card">
+    <div class="card-content left-align white-text light-3">
+      <h2>Eat The Burger</h2>
+     
+     
+    </div>
+  </div>
 </div>
-<div class="row">
+  <div class="row">
     <div class="col s6">
-      <div class="card-panel white z-depth-5">
-          <h4 class="blue-text">Uneaten Burgers</h4>
+      <div class="card-panel background-card animate-one">
+          <h4 class="white-text" style="background: black;">Uneaten Burgers</h4>
         </div>
      <ul class="collection">
         {{#each burgers}}
@@ -16,8 +22,8 @@
     </div>
      
       <div class="col s6">
-        <div class="card-panel white z-depth-5">
-          <h4 class="blue-text">Eaten Burgers</h4>
+        <div class="card-panel background-card animate-two">
+          <h4  style="background: black;" class="white-text">Eaten Burgers</h4>
         </div>
         <ul class="collection">
         {{#each burgers}}
@@ -27,21 +33,21 @@
         {{/each}}
         </ul>
       </div>
-   
+   </div>
     
       <div class="row">
-        <form class="create-form col s12">
+        <form style="margin:auto; display:block"class="create-form col s12">
           <div class="row">
             <div class="input-field col s12">
-              <textarea id="create-burger" name="burger-name" class="materialize-textarea"></textarea>
+              <input style="width: 60%;" type="text" id="create-burger" name="burger-name" class="materialize-input"></input>
               <label for="textarea1" name="burger-name">Create Burger</label>
             </div>
           </div>
-          <button type="submit" class="btn waves-effect black">Add Burger</button>
+          <button type="submit" class="btn waves-effect pulse black">Add Burger</button>
         </form>
       </div>
-     </div><!--End container-->
-  </div>
+     
+  
   
   
     
