@@ -35,7 +35,7 @@ $(document).ready(function(){
 
  
 //Change the boolean value of devour back to false.
-
+//Attempted to add button that would move the burger back into uneaten category
 $('.uneat').on('click', function (event) {
   event.preventDefault()
   let id = $(this).data("id")
